@@ -2,8 +2,14 @@
   "parserOptions": {
     "ecmaVersion": 2017
   },
+  "rules": {
+    "max-len": [2, 120]
+  },
   "extends": [
     "airbnb-base",
     "plugin:vue/essential"
-  ]
+  ],
+  "env": {
+    "jest": true
+  }
 }
