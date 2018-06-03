@@ -3,6 +3,7 @@
         <h2>List of Settings in address <code>{{addressNamespace}}</code></h2>
         <div class="columns">
             <div class="column col-6">
+                <div class="loading loading-lg" v-if="!this.$store.state.settings.length"></div>
                 <setting v-for="(setting,k) in this.$store.state.settings"
                          v-bind:key="k"
                          v-bind:address="setting.address"

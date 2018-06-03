@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const Dotenv = require('dotenv-webpack');
 
@@ -34,8 +35,12 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new Dotenv(),
+    new CopyWebpackPlugin([{
+      from: 'src/protos/',
+      to: 'protos/',
+    }]),
   ],
-  devtool: '#eval-source-map',
+  devtool: '#eval',
   devServer: {
     contentBase: __dirname,
     compress: true,
